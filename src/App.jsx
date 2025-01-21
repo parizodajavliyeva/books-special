@@ -23,10 +23,10 @@ const App = () => {
     setBooks((prevBooks) => [...prevBooks, newBook]);
   };
 
-  const router = createBrowserRouter([ //isAuth ? <Login /> :
+  const router = createBrowserRouter([
     {
       path: "/",
-      element:  <Home />,
+      element:  isAuth ? <Login /> : <Home />,
     },
     {
       path: "/register",

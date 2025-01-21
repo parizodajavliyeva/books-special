@@ -35,7 +35,8 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
       <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 max-w-4xl w-full">
-        <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg w-full sm:w-1/2">
+        {/* Image div, hidden on mobile */}
+        <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg w-full sm:w-1/2 sm:block hidden">
           <img src={myImage} alt="Login Illustration" className="w-full h-auto" />
         </div>
 

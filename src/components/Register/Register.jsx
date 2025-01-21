@@ -35,12 +35,13 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-4 bg-gray-50">
-      <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg max-w-lg w-full md:w-1/2">
+    <div className="flex flex-col sm:flex-row items-center justify-center min-h-screen p-4 bg-gray-50">
+      {/* Image div, hidden on mobile */}
+      <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg w-full sm:w-1/2 sm:block hidden">
         <img src={a} alt="Register Illustration" className="w-full h-auto" />
       </div>
 
-      <div className="flex-grow bg-white p-8 rounded-lg shadow-lg max-w-lg w-full md:w-1/2 mt-6 md:mt-0 md:ml-6">
+      <div className="flex-grow bg-white p-8 rounded-lg shadow-lg w-full sm:w-1/2 mt-6 sm:mt-0 sm:ml-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           <h1 className="text-3xl font-bold mb-4">Register</h1>
           <NavLink
@@ -81,7 +82,7 @@ const Register = () => {
           <input
             name="password"
             onChange={onChange}
-            type="number"
+            type="password"  // Changed type to password for better security
             placeholder="Password"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
