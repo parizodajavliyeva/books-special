@@ -32,9 +32,9 @@ const ItemDetail = () => {
   }, [bookData]);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-900">
-      <div className="w-96 p-6 bg-gray-800 rounded shadow-lg">
-        <h2 className="text-2xl font-bold text-white mb-4">
+    <div className="flex items-center justify-center min-h-screen px-4 bg-gray-900">
+      <div className="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-white mb-4 text-center">
           {bookData?.title || "Loading..."}
         </h2>
         <div className="space-y-2">

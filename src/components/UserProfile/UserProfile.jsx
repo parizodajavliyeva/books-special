@@ -6,7 +6,7 @@ const UserProfile = ({ darkMode }) => {
     <div className={`p-6 max-w-3xl mx-auto rounded-md shadow-md ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'}`}>
       <h2 className="text-2xl font-bold mb-6">User Profile</h2>
 
-      <nav className="mb-6">
+      <nav className="mb-6 space-y-4 sm:space-y-2">
         <NavLink 
           to="account" 
           className={({ isActive }) =>
@@ -16,8 +16,7 @@ const UserProfile = ({ darkMode }) => {
           }
         >
           My Account
-        </NavLink>
-        <br />
+        </NavLink><br />
         <NavLink 
           to="settings" 
           className={({ isActive }) =>
@@ -27,8 +26,7 @@ const UserProfile = ({ darkMode }) => {
           }
         >
           Settings
-        </NavLink>
-        <br />
+        </NavLink><br />
         <NavLink 
           to="security" 
           className={({ isActive }) =>
@@ -38,10 +36,9 @@ const UserProfile = ({ darkMode }) => {
           }
         >
           Security
-        </NavLink>
+        </NavLink><br />
       </nav>
 
-      {/* Content will be injected here */}
       <Outlet />
     </div>
   );

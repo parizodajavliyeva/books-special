@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect, useRef } from "react";
-import img from "../../../public/img.jpg"
+import img from "../../../public/img.jpg";
+
 const Account = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -8,21 +8,20 @@ const Account = () => {
   const [email, setEmail] = useState("");
   const [profileImage, setProfileImage] = useState(null);
 
-  const fileInputRef = useRef(null); 
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     const savedFirstName = localStorage.getItem("firstName") || "Odina";
     const savedLastName = localStorage.getItem("lastName") || "Jovliyeva";
     const savedPhone = localStorage.getItem("phone") || "908180776";
     const savedEmail = localStorage.getItem("email") || "nezuko.chan1198@gmail.com";
-    const savedImage = localStorage.getItem("image" ) || {img}
-
+    const savedImage = localStorage.getItem("image") || img;
 
     setFirstName(savedFirstName);
     setLastName(savedLastName);
     setPhone(savedPhone);
     setEmail(savedEmail);
-    setProfileImage(savedImage)
+    setProfileImage(savedImage);
   }, []);
 
   const handleSaveChanges = () => {
@@ -35,21 +34,21 @@ const Account = () => {
   };
 
   const handleImageClick = () => {
-    fileInputRef.current.click(); 
+    fileInputRef.current.click();
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setProfileImage(URL.createObjectURL(file)); 
+      setProfileImage(URL.createObjectURL(file));
     }
   };
 
   return (
     <div className="p-6 bg-gray-50 dark:bg-gray-800 dark:text-white max-w-4xl mx-auto rounded-md shadow-md">
-      <h2 className="text-2xl font-bold mb-6">My Profile</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center md:text-left">My Profile</h2>
 
-      <div className="flex items-center gap-6 mb-6">
+      <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
         <div className="relative">
           <div
             className="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center overflow-hidden cursor-pointer"
@@ -91,9 +90,10 @@ const Account = () => {
             accept="image/*"
           />
         </div>
+        
       </div>
 
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label
             htmlFor="firstName"
@@ -158,7 +158,7 @@ const Account = () => {
           />
         </div>
 
-        <div className="md:col-span-2 flex justify-end">
+        <div className="sm:col-span-2 flex justify-center sm:justify-end">
           <button
             type="button"
             onClick={handleSaveChanges}

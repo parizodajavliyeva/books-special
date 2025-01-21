@@ -3,10 +3,11 @@ import { Form, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { API } from "../utils/config";
 import a from "../../assets/a.png";
+
 const Register = () => {
   const navigate = useNavigate();
-
   const { setIsAuth } = useAuth();
+
   const handleSubmit = (evt) => {
     console.log(inputValues);
     evt.preventDefault();
@@ -30,74 +31,69 @@ const Register = () => {
   });
 
   const onChange = (evt) => {
-    setInputValues({ ...inputValues,  [evt.target.name]: evt.target.value });
+    setInputValues({ ...inputValues, [evt.target.name]: evt.target.value });
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen  p-4">
-  <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg max-w-lg">
-    <img
-      src={a}
-      alt="Register Illustration"
-      className=""
-    />
-  </div>
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-4 bg-gray-50">
+      <div className="flex-shrink-0 bg-white p-8 rounded-lg shadow-lg max-w-lg w-full md:w-1/2">
+        <img src={a} alt="Register Illustration" className="w-full h-auto" />
+      </div>
 
-  <div className="flex-grow bg-white p-8 rounded-lg shadow-lg max-w-lg md:ml-6 mt-6 md:mt-0">
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <h1 className="text-3xl font-bold mb-4">Register</h1>
-      <NavLink
-        to={"/login"}
-        className="text-blue-500 hover:underline text-sm block mb-4"
-      >
-        Login
-      </NavLink>
+      <div className="flex-grow bg-white p-8 rounded-lg shadow-lg max-w-lg w-full md:w-1/2 mt-6 md:mt-0 md:ml-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <h1 className="text-3xl font-bold mb-4">Register</h1>
+          <NavLink
+            to={"/login"}
+            className="text-blue-500 hover:underline text-sm block mb-4"
+          >
+            Login
+          </NavLink>
 
-      <input
-        name="first_name"
-        onChange={onChange}
-        type="text"
-        placeholder="First name"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-      />
-      <input
-        name="last_name"
-        onChange={onChange}
-        type="text"
-        placeholder="Last name"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-      />
-      <input
-        name="phone"
-        onChange={onChange}
-        type="number"
-        placeholder="Phone Number"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-      />
-      <input
-        name="email"
-        onChange={onChange}
-        type="text"
-        placeholder="Email"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-      />
-      <input
-        name="password"
-        onChange={onChange}
-        type="number"
-        placeholder="Password"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-      />
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
-      >
-        Next Step
-      </button>
-    </form>
-  </div>
-</div>
-
+          <input
+            name="first_name"
+            onChange={onChange}
+            type="text"
+            placeholder="First name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <input
+            name="last_name"
+            onChange={onChange}
+            type="text"
+            placeholder="Last name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <input
+            name="phone"
+            onChange={onChange}
+            type="number"
+            placeholder="Phone Number"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <input
+            name="email"
+            onChange={onChange}
+            type="text"
+            placeholder="Email"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <input
+            name="password"
+            onChange={onChange}
+            type="number"
+            placeholder="Password"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+          >
+            Next Step
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
